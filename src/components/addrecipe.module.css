@@ -1,0 +1,60 @@
+.mainHeader {
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.addNewContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  width: 60%;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.inputContainer input,
+select {
+  height: 2rem;
+  margin: 0.5rem 0;
+}
+
+.ingredientContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  margin-bottom: -1rem;
+}
+
+.ingredientContainer > .inputContainer > .quantity {
+  margin: 0.5rem 0.4rem 0 0;
+}
+
+.submitButton {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  margin-bottom: 8rem;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #739873;
+}
+
+.addMoreButton {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border-color: #739873;
+  color: #739873;
+}
+
+.addMoreButton:hover {
+  cursor: pointer;
+  background-color: #fffefe;
+}

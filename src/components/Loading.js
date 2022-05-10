@@ -1,12 +1,17 @@
 import React from "react";
+import classes from "./loading.module.css";
 
-const Header = () => {
+const Loading = () => {
   return (
-    <header>
-      <h1 className="title">TasteIT</h1>
-      <Nav />
-    </header>
+    <div className={classes.loaderContainer}>
+      <div className={classes.loader}>
+        <div className={classes.circle}></div>
+        <div className={classes.circle}></div>
+        <div className={classes.circle}></div>
+        <span>Loading...</span>
+      </div>
+    </div>
   );
 };
 
-export default Header;
+export default Loading;

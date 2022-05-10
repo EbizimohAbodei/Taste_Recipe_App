@@ -1,0 +1,23 @@
+.recipeTextContainer {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.searchInput {
+  width: 60%;
+  height: 1.5rem;
+  margin: 1rem 0;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  height: auto;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  min-height: 3rem;
+  cursor: pointer;
+  margin: 4px 2px 4px 0;
+}

@@ -1,0 +1,38 @@
+.contactContainer {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.contactContainer form {
+  width: 50%;
+}
+
+.contactText {
+  font-size: 2rem;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+
+.inputContainer label {
+  margin: 0.2rem 0;
+}
+
+.inputContainer input {
+  height: 2rem;
+}
+
+.submitButton {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  margin-bottom: 3rem;
+}
+
+.submitButton:hover {
+  cursor: pointer;
+  background-color: #739873;
+}

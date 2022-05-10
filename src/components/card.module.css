@@ -1,0 +1,40 @@
+.cardContainer {
+  padding: 0.5rem;
+}
+
+.card {
+  width: 100%;
+  border-style: solid;
+  border-color: rgb(227, 221, 213);
+  height: auto;
+  min-height: 30rem;
+}
+
+.recipeImage {
+  width: 100%;
+}
+
+.countryFlag {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 5rem;
+  position: absolute;
+  background-color: white;
+  margin: -0.6rem -2.5rem;
+  object-fit: cover;
+}
+
+.cardText {
+  padding: 0.6rem 1rem;
+}
+
+.seeMoreLink {
+  margin: 0.7rem 1rem;
+  padding: 0.2rem;
+  text-decoration: none;
+  color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 0.2rem;
+  background-color: rgb(110, 162, 211);
+}
