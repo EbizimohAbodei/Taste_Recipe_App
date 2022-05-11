@@ -7,6 +7,7 @@ const axios = require("axios").default;
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [countryData, setCountryData] = useState([]);
+  // const [searchData, setsearchData] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,20 +16,34 @@ const Recipes = () => {
       const countryCall = await axios("https://restcountries.com/v2/all");
       setRecipeData({ recipeData: recipeCall.data });
       setCountryData({ countryData: countryCall.data });
-
       setLoading(!loading);
     };
-
     getApiData();
   }, []);
 
+  // const handleSearch = (e) => {
+  //   setsearchData({ searchData: e.target.value });
+  //   const filteredArr = recipeData.data?.filter((recipe) => {
+  //     if (
+  //       recipe.name
+  //         ?.toLocaleLowerCase()
+  //         .includes(e.target.value?.toLocaleLowerCase())
+  //     ) {
+  //       return recipe;
+  //     }
+  //   });
+  //   setRecipeData({ recipeData: filteredArr });
+  // };
+
   return (
     <div className={classes.recipeContainer}>
-      {console.log(recipeData)}
-      {console.log(countryData)}
       <div className={classes.recipeTextContainer}>
         <h3 className={classes.searchBarText}>Search for recipes</h3>
-        <input type="text" className={classes.searchInput}></input>
+        <input
+          type="text"
+          className={classes.searchInput}
+          // onChange={handleSearch}
+        ></input>
         <h3 className={classes.ourRecipesText}> Our recipes</h3>
       </div>
       {loading && <Loading />}
@@ -44,6 +59,7 @@ const Recipes = () => {
               recipeImage={item.recipeImageUrl}
               recipeName={item.recipename}
               instructions={item.instructions}
+              id={item.id}
             />
           );
         })}

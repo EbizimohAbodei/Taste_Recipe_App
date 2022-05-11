@@ -11,9 +11,6 @@ const SingleRecipe = (props) => {
           <p>Ingreient 1</p>
           <p>Ingreient 2</p>
           <p>Ingreient 3</p>
-          {/* <Link to={props.name} className="seeMoreLink">
-        See more
-      </Link> */}
         </div>
         <div>
           <p>

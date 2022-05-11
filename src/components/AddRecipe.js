@@ -5,12 +5,28 @@ const axios = require("axios").default;
 const AddRecipe = () => {
   const [countryData, setCountryData] = useState([]);
 
+  const [inputCount, setInputCount] = useState(0);
+
   useEffect(() => {
     axios
       .get("https://restcountries.com/v2/all")
       .then((response) => response.data)
       .then((res) => setCountryData({ countryData: res }));
   }, []);
+
+  const addInputs = (e) => {
+    e.preventDefault();
+    if (inputCount <= 3) {
+      setInputCount(inputCount + 1);
+    }
+  };
+
+  const removeInputs = (e) => {
+    e.preventDefault();
+    if (inputCount !== 0) {
+      setInputCount(inputCount - 1);
+    }
+  };
 
   return (
     <div className={classes.addNewContainer}>
@@ -119,8 +135,111 @@ const AddRecipe = () => {
             />
           </div>
         </div>
-        <button type="submit" className={classes.addMoreButton}>
+        {inputCount >= 1 ? (
+          <div className={classes.ingredientContainer}>
+            <div className={classes.inputContainer}>
+              <label htmlFor="quantityFive">Quantity:</label>
+              <input
+                type="text"
+                name="quantityFive"
+                id="quantityFive"
+                className={classes.quantity}
+              />
+            </div>
+            <div className={classes.inputContainer}>
+              <label htmlFor="ingredientFive">Ingredient:</label>
+              <input
+                type="text"
+                name="ingredientFive"
+                id="ingredientFive"
+                className={classes.ingredient}
+              />
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {inputCount >= 2 ? (
+          <div className={classes.ingredientContainer}>
+            <div className={classes.inputContainer}>
+              <label htmlFor="quantitySix">Quantity:</label>
+              <input
+                type="text"
+                name="quantitySix"
+                id="quantitySix"
+                className={classes.quantity}
+              />
+            </div>
+            <div className={classes.inputContainer}>
+              <label htmlFor="ingredientSix">Ingredient:</label>
+              <input
+                type="text"
+                name="ingredientSix"
+                id="ingredientSix"
+                className={classes.ingredient}
+              />
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
+        {inputCount >= 3 && (
+          <div className={classes.ingredientContainer}>
+            <div className={classes.inputContainer}>
+              <label htmlFor="quantitySeven">Quantity:</label>
+              <input
+                type="text"
+                name="quantitySeven"
+                id="quantitySeven"
+                className={classes.quantity}
+              />
+            </div>
+            <div className={classes.inputContainer}>
+              <label htmlFor="ingredientSeven">Ingredient:</label>
+              <input
+                type="text"
+                name="ingredientSeven"
+                id="ingredientSeven"
+                className={classes.ingredient}
+              />
+            </div>
+          </div>
+        )}
+        {inputCount >= 4 && (
+          <div className={classes.ingredientContainer}>
+            <div className={classes.inputContainer}>
+              <label htmlFor="quantityEight">Quantity:</label>
+              <input
+                type="text"
+                name="quantityEight"
+                id="quantityEight"
+                className={classes.quantity}
+              />
+            </div>
+            <div className={classes.inputContainer}>
+              <label htmlFor="ingredientEight">Ingredient:</label>
+              <input
+                type="text"
+                name="ingredientEight"
+                id="ingredientEight"
+                className={classes.ingredient}
+              />
+            </div>
+          </div>
+        )}
+        <button
+          type="submit"
+          className={classes.addMoreButton}
+          onClick={addInputs}
+        >
           add more
+        </button>
+        <button
+          type="submit"
+          className={classes.removeButton}
+          onClick={removeInputs}
+        >
+          remove
         </button>
         <div className={classes.inputContainer}>
           <label htmlFor="instructions">Instructions:</label>

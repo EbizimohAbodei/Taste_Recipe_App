@@ -6,6 +6,13 @@ import AddRecipe from "./components/AddRecipe";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
 import About from "./components/About";
+import SingleRecipe from "./components/SingleRecipe";
+import { useParams } from "react-router-dom";
+
+const RouterWrapper = (props) => {
+  const params = useParams();
+  return <SingleRecipe params={params} {...props} />;
+};
 
 function App() {
   return (
@@ -13,6 +20,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route path="recipes" element={<Recipes />} />
         <Route path="addrecipe" element={<AddRecipe />} />
+        <Route path="recipes/:singlerecipe" element={<RouterWrapper />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
         <Route index element={<Home />} />

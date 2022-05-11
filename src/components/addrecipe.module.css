@@ -52,9 +52,21 @@ select {
   border-radius: 0.2rem;
   border-color: #739873;
   color: #739873;
+  margin-right: 0.5rem;
 }
 
 .addMoreButton:hover {
+  cursor: pointer;
+  background-color: #fffefe;
+}
+
+.removeButton {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  border-color: #739873;
+  color: #739873;
+}
+.removeButton:hover {
   cursor: pointer;
   background-color: #fffefe;
 }
