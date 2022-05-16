@@ -18,10 +18,8 @@ const Home = () => {
           <a href="/recipes">Browse recipes</a>
         </button>
       </div>
-      <div>
-        <h3 href="/recipes" className="subHeader">
-          Looking for the recipes?
-        </h3>
+      <div className="homeCards">
+        <h3 className="subHeader">Looking for the recipes?</h3>
         <div className="aboveFooterCards">
           <div className="aboveFooterCard">
             <h4 className="browseText">Browse recipes</h4>

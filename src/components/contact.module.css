@@ -5,11 +5,12 @@
 }
 
 .contactContainer form {
-  width: 50%;
+  width: 40%;
 }
 
 .contactText {
   font-size: 2rem;
+  text-align: center;
 }
 
 .inputContainer {
@@ -20,10 +21,32 @@
 
 .inputContainer label {
   margin: 0.2rem 0;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
-.inputContainer input {
+.email {
+  background: url(../assets/images/icons8-envelope-24.png) no-repeat scroll 4px
+    3px;
+  padding-left: 30px;
   height: 2rem;
+}
+
+.name {
+  background: url(../assets/images/icons8-person-24.png) no-repeat scroll 4px
+    1px;
+  padding-left: 30px;
+  height: 2rem;
+}
+
+:not(.email, .name)::placeholder {
+  font-size: 1rem;
+  padding: 3px 3px;
+}
+
+.buttonCont {
+  display: flex;
+  justify-content: center;
 }
 
 .submitButton {
@@ -34,5 +57,5 @@
 
 .submitButton:hover {
   cursor: pointer;
-  background-color: #739873;
+  background-color: #adc5cf;
 }

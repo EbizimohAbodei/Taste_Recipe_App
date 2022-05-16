@@ -19,7 +19,7 @@ const Card = (props) => {
         <h3>{props.recipeName}</h3>
         <p>{props.instructions}</p>
       </div>
-      <Link to="/recipes/:singlerecipe" className={classes.seeMoreLink}>
+      <Link to={props.recipeName} className={classes.seeMoreLink}>
         See more
       </Link>
     </div>

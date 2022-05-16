@@ -16,8 +16,10 @@ const AddRecipe = () => {
 
   const addInputs = (e) => {
     e.preventDefault();
-    if (inputCount <= 3) {
+    if (inputCount <= 4) {
       setInputCount(inputCount + 1);
+    } else {
+      window.alert("Input limit exhausted");
     }
   };
 
@@ -25,6 +27,8 @@ const AddRecipe = () => {
     e.preventDefault();
     if (inputCount !== 0) {
       setInputCount(inputCount - 1);
+    } else {
+      window.alert("Minimum input reached");
     }
   };
 
@@ -206,6 +210,28 @@ const AddRecipe = () => {
           </div>
         )}
         {inputCount >= 4 && (
+          <div className={classes.ingredientContainer}>
+            <div className={classes.inputContainer}>
+              <label htmlFor="quantityEight">Quantity:</label>
+              <input
+                type="text"
+                name="quantityEight"
+                id="quantityEight"
+                className={classes.quantity}
+              />
+            </div>
+            <div className={classes.inputContainer}>
+              <label htmlFor="ingredientEight">Ingredient:</label>
+              <input
+                type="text"
+                name="ingredientEight"
+                id="ingredientEight"
+                className={classes.ingredient}
+              />
+            </div>
+          </div>
+        )}
+        {inputCount >= 5 && (
           <div className={classes.ingredientContainer}>
             <div className={classes.inputContainer}>
               <label htmlFor="quantityEight">Quantity:</label>

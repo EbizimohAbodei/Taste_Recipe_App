@@ -44,29 +44,29 @@ select {
 
 .submitButton:hover {
   cursor: pointer;
-  background-color: #739873;
+  background-color: #adc5cf;
 }
 
 .addMoreButton {
   padding: 0.5rem;
   border-radius: 0.2rem;
-  border-color: #739873;
-  color: #739873;
+  border-color: #adc5cf;
+  color: #1e1c1c;
   margin-right: 0.5rem;
 }
 
 .addMoreButton:hover {
   cursor: pointer;
-  background-color: #fffefe;
+  background-color: #adc5cf;
 }
 
 .removeButton {
   padding: 0.5rem;
   border-radius: 0.2rem;
-  border-color: #739873;
-  color: #739873;
+  border-color: #adc5cf;
+  color: #1e1c1c;
 }
 .removeButton:hover {
   cursor: pointer;
-  background-color: #fffefe;
+  background-color: #adc5cf;
 }

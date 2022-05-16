@@ -1,36 +1,53 @@
 import React from "react";
+import classes from "./singleRecipe.module.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const SingleRecipe = (props) => {
+  const [recipeData, setRecipeData] = useState([]);
+  const [countryData, setCountryData] = useState([]);
+
+  useEffect(() => {
+    const getApiData = async () => {
+      const recipeCall = await axios("http://localhost:3001/recipes");
+      const filter = recipeCall.data.filter((recipe) => {
+        if (recipe.recipename.includes(props.params.singlerecipe)) {
+          return recipe;
+        }
+        return recipe;
+      });
+      setRecipeData(filter);
+
+      const countryCall = await axios(
+        `https://restcountries.com/v2/alpha/${recipeData[0]?.countrycode}`
+      );
+      setCountryData(countryCall?.data);
+    };
+    getApiData();
+  }, []);
+
   return (
-    <div>
-      <h3>Name of Recipe</h3>
-      <div className="singleContainer">
-        <div>
-          <img src={props.src} alt={props.name}></img>
-          <p>Ingredients</p>
-          <p>Ingreient 1</p>
-          <p>Ingreient 2</p>
-          <p>Ingreient 3</p>
-        </div>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
-          </p>
-          <h4>Name of creator</h4>
-          <p>Preparation</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
-          </p>
-        </div>
+    <div className={classes.singleContainer}>
+      <h3 className={classes.header}>
+        {recipeData[0]?.recipename} by {recipeData[0]?.author} from{" "}
+        {countryData.name}
+      </h3>
+      <div className={classes.ingredientsContainer}>
+        <img src={recipeData[0]?.recipeImageUrl} alt={props.name}></img>
+        <h4>Ingredients:</h4>
+        <ul>
+          {recipeData[0]?.ingredients?.map((ingredient) => {
+            return (
+              <li key={ingredient.name}>
+                Ingredient: {ingredient?.name}, Quantity: {ingredient?.quantity}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+      <div className={classes.instructionContainer}>
+        <h4>Instructions:</h4>
+        <p> {recipeData[0]?.instructions}</p>
       </div>
     </div>
   );

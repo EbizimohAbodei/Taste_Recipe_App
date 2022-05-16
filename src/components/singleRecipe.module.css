@@ -1,0 +1,22 @@
+.singleContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem 0;
+  padding-bottom: 3rem;
+}
+
+.header {
+  text-align: center;
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+.singleContainer div {
+  justify-content: center;
+  text-align: center;
+}
+
+.instructionContainer {
+  margin: 0 20rem;
+}
