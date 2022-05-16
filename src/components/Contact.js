@@ -8,7 +8,7 @@ const Contact = () => {
   return (
     <div className={classes.contactContainer}>
       <form>
-        <h2 className={classes.contactText}>Contact Us</h2>
+        <h2 className={classes.title}>Contact Us</h2>
         <div className={classes.inputContainer}>
           <label htmlFor="name">Name:</label>
           <input

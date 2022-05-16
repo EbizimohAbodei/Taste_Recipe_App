@@ -1,6 +1,7 @@
-.mainHeader {
+.title {
   font-size: 2rem;
   margin: 2rem 0 1rem 0;
+  text-align: center;
 }
 
 .addNewContainer {
@@ -32,7 +33,7 @@ select {
   margin-bottom: -1rem;
 }
 
-.ingredientContainer > .inputContainer > .quantity {
+.ingredientContainer > .inputContainer > .ingredient {
   margin: 0.5rem 0.4rem 0 0;
 }
 

@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="aboutContainer">
-      <h2 className="aboutSubHeader">About TasteIT</h2>
+      <h2 className="aboutTitle">About TasteIT</h2>
       <p className="aboutText">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Pulvinar

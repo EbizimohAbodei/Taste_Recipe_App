@@ -38,7 +38,7 @@ const Recipes = () => {
   return (
     <div className={classes.recipeContainer}>
       <div className={classes.recipeTextContainer}>
-        <h3 className={classes.searchBarText}>Search for recipes</h3>
+        <h3 className={classes.title}>Search for recipes</h3>
         <input
           type="text"
           className={classes.searchInput}

@@ -1,16 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
 * {
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --bg-color: #ebd1dd;
-  --nav-color: rgb(201, 181, 217);
-  --primary-color: #c8b5d8;
-  --secondary-color: #161318;
+  --navbg: #adc5cf;
+  --footerbg: #adc5cf;
   --font: "Open Sans", sans-serif;
   --font-hero: 4rem;
-  --font-title: 25px;
+  --font-title: 20px;
 }
 
 html {
@@ -19,6 +19,7 @@ html {
 
 body {
   margin: 0;
+  font-family: var(--font);
 }
 
 header {
@@ -29,7 +30,7 @@ header {
   height: 75px;
   justify-content: space-between;
   height: 4rem;
-  background-color: #adc5cf;
+  background-color: var(--navbg);
   opacity: 0.9;
 }
 
@@ -85,7 +86,8 @@ main {
 }
 
 .heroText {
-  margin: 7rem 0 0 7rem;
+  margin: 10rem 0 0 4rem;
+  font-size: var(--font-title);
 }
 
 .video {
@@ -106,7 +108,8 @@ main {
 .subHeader {
   z-index: -1;
   text-align: center;
-  margin-top: 15rem;
+  margin-top: 10rem;
+  padding-bottom: 0.5rem;
 }
 
 .aboveFooterCards {
@@ -126,23 +129,26 @@ main {
 .aboveFooterCards a {
   font-size: 1rem;
   font-weight: bold;
+  color: #09364a;
 }
 
-.aboutSubHeader {
+.aboutTitle {
   text-align: center;
-  padding: 2rem;
+  font-size: 2rem;
+  padding: 2rem 0 0.5rem 0;
 }
 
 .aboutText {
   text-align: justify;
   padding: 1rem 15rem;
   display: block;
+  margin-bottom: 4rem;
 }
 
 Footer {
   display: flex;
   justify-content: center;
-  background-color: #adc5cf;
+  background-color: var(--footerbg);
   position: fixed;
   bottom: 0;
   align-items: center;
@@ -152,6 +158,6 @@ Footer {
 
 @media only screen and (min-height: 800px) {
   .subHeader {
-    margin-top: 27rem;
+    margin-top: 21rem;
   }
 }
