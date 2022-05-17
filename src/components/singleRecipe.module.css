@@ -6,7 +6,7 @@
   padding-bottom: 3rem;
 }
 
-.header {
+.title {
   text-align: center;
   padding: 1rem;
   font-size: 2rem;
@@ -17,6 +17,16 @@
   text-align: center;
 }
 
+.subhead {
+  font-weight: bolder;
+  color: #0c4a64;
+}
+
 .instructionContainer {
-  margin: 0 20rem;
+  margin: 0.5rem 10rem;
+}
+
+:not(.title).instructionContainer h3,
+.ingredientsContainer h3 {
+  text-decoration: underline;
 }

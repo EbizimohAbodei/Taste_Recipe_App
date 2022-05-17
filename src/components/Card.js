@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 import classes from "./card.module.css";
 
 const Card = (props) => {
@@ -22,6 +23,13 @@ const Card = (props) => {
       <Link to={props.recipeName} className={classes.seeMoreLink}>
         See more
       </Link>
+      <a
+        onClick={() => props.deleteCard(props.id)}
+        className={classes.deleteBtn}
+        title="Click to delete recipe"
+      >
+        <RiDeleteBin2Fill />
+      </a>
     </div>
   );
 };

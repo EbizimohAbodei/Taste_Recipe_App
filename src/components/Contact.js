@@ -7,7 +7,12 @@ const Contact = () => {
   };
   return (
     <div className={classes.contactContainer}>
-      <form>
+      <form
+        action="mailto:pmanred@yahoo.com"
+        method="POST"
+        enctype="multipart/form-data"
+        name="EmailForm"
+      >
         <h2 className={classes.title}>Contact Us</h2>
         <div className={classes.inputContainer}>
           <label htmlFor="name">Name:</label>
@@ -30,6 +35,16 @@ const Contact = () => {
           />
         </div>
         <div className={classes.inputContainer}>
+          <label htmlFor="subject">Subject:</label>
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            placeholder="subject Address"
+            className={classes.subject}
+          />
+        </div>
+        <div className={classes.inputContainer}>
           <label htmlFor="message">Message:</label>
           <textarea
             type="text"
@@ -42,8 +57,8 @@ const Contact = () => {
         <div className={classes.buttonCont}>
           <input
             type="submit"
+            id="submit"
             className={classes.submitButton}
-            onClick={sendEmail}
           ></input>
         </div>
       </form>

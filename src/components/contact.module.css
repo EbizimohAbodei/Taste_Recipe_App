@@ -11,7 +11,7 @@
 .title {
   font-size: 2rem;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
 }
 
 .inputContainer {
@@ -40,6 +40,13 @@
   height: 2rem;
 }
 
+.subject {
+  background: url(../assets/images/icons8-document-header-30.png) no-repeat
+    scroll 4px 1px;
+  padding-left: 30px;
+  height: 2rem;
+}
+
 :not(.email, .name)::placeholder {
   font-size: 1rem;
   padding: 3px 3px;
@@ -59,4 +66,10 @@
 .submitButton:hover {
   cursor: pointer;
   background-color: #adc5cf;
+}
+
+@media only screen and (min-height: 800px) {
+  .title {
+    margin-top: 2rem;
+  }
 }
