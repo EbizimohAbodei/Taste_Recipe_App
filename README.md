@@ -1,6 +1,14 @@
 # About Taste-IT App
 
-This project allows for the creation, deletion, storage and display of food recipes using a local storage.
+This project allows for the creation, deletion, storage and display of food recipes using a local server.
+
+## npm modules/packages
+
+- axios
+- react-router-dom
+- json server
+- sweetalert2
+- react-icons
 
 ## Available Scripts
 

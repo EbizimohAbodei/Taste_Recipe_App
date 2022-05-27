@@ -1,5 +1,6 @@
 import classes from "./addrecipe.module.css";
 import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
 const axios = require("axios").default;
 
 const AddRecipe = () => {
@@ -72,9 +73,25 @@ const AddRecipe = () => {
     };
     axios
       .post("http://localhost:3001/recipes", inputData)
-      .then((res) => console.log(res));
-    // .catch((error) => console.log(error));
-    //   window.location.reload();
+      .then((res) => console.log(res))
+      .then((response) => {
+        Swal.fire({
+          icon: "success",
+          title: "Recipe was successfully added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Recipe addition was unsuccessful",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      });
+
+    e.target.reset();
   };
 
   return (

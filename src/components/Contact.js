@@ -2,9 +2,9 @@ import React from "react";
 import classes from "./contact.module.css";
 
 const Contact = () => {
-  const sendEmail = (e) => {
-    e.preventDefault();
-  };
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  // };
   return (
     <div className={classes.contactContainer}>
       <form

@@ -11,9 +11,7 @@ const Home = () => {
       </div>
       <div className="heroText">
         <h1>TasteIT</h1>
-        <p>
-          A recipe application whih is made in REACT22K group of React Lessons
-        </p>
+        <p>A recipe web application made in REACT22K group of React Lessons</p>
         <button>
           <a href="/recipes" className="heroLink">
             Browse recipes

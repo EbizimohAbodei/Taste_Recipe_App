@@ -6,6 +6,7 @@ import axios from "axios";
 const SingleRecipe = (props) => {
   // Declaring useState variables
   const [recipeData, setRecipeData] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [countryData, setCountryData] = useState([]);
 
   useEffect(() => {
@@ -22,9 +23,7 @@ const SingleRecipe = (props) => {
       });
       setRecipeData(filter);
 
-      const countryCall = await axios(
-        `https://restcountries.com/v2/alpha/${recipeData[0]?.countrycode}`
-      );
+      const countryCall = await axios(`https://restcountries.com/v2/alpha/SWE`);
       setCountryData(countryCall.data);
     };
     getApiData();
@@ -34,8 +33,7 @@ const SingleRecipe = (props) => {
   return (
     <div className={classes.singleContainer}>
       <h3 className={classes.title}>
-        {recipeData[0]?.recipename} by {recipeData[0]?.author} from{" "}
-        {countryData.name}
+        {recipeData[0]?.recipename} by {recipeData[0]?.author}
       </h3>
       <div className={classes.ingredientsContainer}>
         <img src={recipeData[0]?.recipeImageUrl} alt={props.name}></img>

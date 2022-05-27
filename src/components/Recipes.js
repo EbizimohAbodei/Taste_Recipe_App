@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Card";
+import Swal from "sweetalert2";
 import classes from "./recipes.module.css";
 import Loading from "./Loading";
 const axios = require("axios").default;
@@ -7,7 +8,6 @@ const axios = require("axios").default;
 const Recipes = () => {
   const [recipeData, setRecipeData] = useState([]);
   const [countryData, setCountryData] = useState([]);
-  /* eslint-disable no-unused-vars */
   const [searchData, setSearchData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -18,8 +18,8 @@ const Recipes = () => {
       const countryCall = await axios("https://restcountries.com/v2/all");
 
       // Setting response data to useState variables
-      setRecipeData({ recipeData: recipeCall.data });
-      setCountryData({ countryData: countryCall.data });
+      setRecipeData(recipeCall.data);
+      setCountryData(countryCall.data);
       setLoading(!loading);
     };
     getApiData();
@@ -28,26 +28,40 @@ const Recipes = () => {
 
   // Does the search by filtering data from local storage based on user input onChange
   const handleSearch = (e) => {
-    setSearchData({ searchData: e.target.value });
-    // console.log(searchData);
-    const filteredArr = recipeData.recipeData.filter((recipe) => {
-      if (
-        recipe.recipename
-          ?.toLocaleLowerCase()
-          .includes(e.target.value?.toLocaleLowerCase())
-      ) {
+    setSearchData(e.target.value.toLocaleLowerCase());
+    // eslint-disable-next-line
+    const filteredArr = recipeData?.filter((recipe) => {
+      if (recipe.recipename?.toLocaleLowerCase().includes(searchData)) {
         return recipe;
       }
-      return recipe;
     });
-    setRecipeData({ recipeData: filteredArr });
+    setRecipeData(filteredArr);
   };
 
   // Triggers the delete action from database and re-renders page in line 42
   const deleteCard = (id) => {
-    axios.delete(`http://localhost:3001/recipes/${id}`).then((res) => {
-      const newRecipes = recipeData.recipeData.filter((item) => item.id !== id);
-      setRecipeData({ recipeData: newRecipes });
+    Swal.fire({
+      title: "Delete recipe?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      confirmButtonText: "Yes! Delete recipe",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        axios.delete(`http://localhost:3001/recipes/${id}`).then((res) => {
+          const newRecipes = recipeData.filter((item) => {
+            return item.id !== id;
+          });
+          setRecipeData(newRecipes);
+          Swal.fire({
+            icon: "success",
+            title: "Recipe was deleted successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        });
+      }
     });
   };
 
@@ -64,12 +78,12 @@ const Recipes = () => {
       </div>
       {loading && <Loading />}
       <div className={classes.cardContainer}>
-        {recipeData?.recipeData?.map((item) => {
+        {recipeData?.map((item) => {
           return (
             <Card
               data={recipeData}
               key={item.id}
-              countryImage={countryData.countryData.find(
+              countryImage={countryData.find(
                 (country) => country.alpha3Code === item.countrycode
               )}
               countryName={item.countryname}

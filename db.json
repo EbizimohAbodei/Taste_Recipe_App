@@ -129,6 +129,74 @@
         }
       ],
       "id": 5
+    },
+    {
+      "recipename": "Grilled baked potatoes",
+      "author": "Jenni Garvins",
+      "recipeImageUrl": "https://source.unsplash.com/300x300/?potato",
+      "countrycode": "DNK",
+      "instructions": "Prepare your grill for indirect heating. Heat the grill to 350F degrees. Clean the potatoes, pat dry and place on a plate. With a fork, poke each potato 4 to 6 times. Coat each potato with olive oil (or any vegetable oil you are using).",
+      "ingredients": [
+        {
+          "name": "Potato",
+          "quantity": "1kg"
+        },
+        {
+          "name": "Cheese",
+          "quantity": "1 Ounce"
+        },
+        {
+          "name": "Olive oil",
+          "quantity": "Two teaspoon"
+        },
+        {
+          "name": "Garlic salt",
+          "quantity": "1/2 teaspoon"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "recipename": "Southern Hummingbird Cake",
+      "author": "Darren Fletcher",
+      "recipeImageUrl": "https://source.unsplash.com/300x300/?cake",
+      "countrycode": "FRA",
+      "instructions": "Preheat the oven to 350°F. Spray a 9x13-inch baking dish with nonstick baking spray (I like the kind with flour in it) Set aside. In a large bowl whisk together the flour, cinnamon, baking soda, and salt. Set aside.",
+      "ingredients": [
+        {
+          "name": "All-purpose flour",
+          "quantity": "1/2kg"
+        },
+        {
+          "name": "Baking Soda",
+          "quantity": "1 Ounce"
+        },
+        {
+          "name": "Vegetable oil",
+          "quantity": "Two teaspoon"
+        },
+        {
+          "name": "Eggs",
+          "quantity": "four"
+        },
+        {
+          "name": "Mashed banana",
+          "quantity": "Two"
+        },
+        {
+          "name": "Crushed pineapple",
+          "quantity": "1/4kg"
+        },
+        {
+          "name": "Salted butter",
+          "quantity": "1/4kg"
+        },
+        {
+          "name": "Powdered sugar",
+          "quantity": "Four tablespoon"
+        }
+      ],
+      "id": 7
     }
   ]
 }

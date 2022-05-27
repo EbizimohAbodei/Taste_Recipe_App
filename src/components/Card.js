@@ -23,13 +23,13 @@ const Card = (props) => {
       <Link to={props.recipeName} className={classes.seeMoreLink}>
         See more
       </Link>
-      <a
+      <button
         onClick={() => props.deleteCard(props.id)}
         className={classes.deleteBtn}
         title="Click to delete recipe"
       >
         <RiDeleteBin2Fill />
-      </a>
+      </button>
     </div>
   );
 };
