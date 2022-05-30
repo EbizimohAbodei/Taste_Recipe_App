@@ -1,3 +1,7 @@
+.recipeContainer {
+  display: block;
+  margin: 0 6rem;
+}
 .recipeTextContainer {
   text-align: center;
   margin: 1rem 0;
@@ -20,13 +24,17 @@
 
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fill, 400px);
   gap: 1rem;
   height: auto;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
   min-height: 3rem;
   cursor: pointer;
   margin: 0.3rem 0 6rem 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .recipeContainer {
+    margin: 0 8rem;
+  }
 }

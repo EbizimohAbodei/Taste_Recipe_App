@@ -471,14 +471,14 @@ const AddRecipe = () => {
           className={classes.addMoreButton}
           onClick={addInputs}
         >
-          add more
+          add inputs
         </button>
         <button
           type="submit"
           className={classes.removeButton}
           onClick={removeInputs}
         >
-          remove
+          remove inputs
         </button>
         <div className={classes.inputContainer}>
           <label htmlFor="instructions">Instructions:</label>
@@ -500,7 +500,7 @@ const AddRecipe = () => {
         <input
           type="submit"
           className={classes.submitButton}
-          value="Post recipe"
+          value="Add recipe"
         />
       </form>
     </div>
