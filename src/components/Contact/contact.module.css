@@ -27,21 +27,21 @@
 }
 
 .email {
-  background: url(../assets/images/icons8-envelope-24.png) no-repeat scroll 4px
-    3px;
+  background: url(/src/assets/images/icons8-envelope-24.png) no-repeat scroll
+    4px 3px;
   padding-left: 30px;
   height: 2rem;
 }
 
 .name {
-  background: url(../assets/images/icons8-person-24.png) no-repeat scroll 4px
+  background: url(/src/assets/images/icons8-person-24.png) no-repeat scroll 4px
     1px;
   padding-left: 30px;
   height: 2rem;
 }
 
 .subject {
-  background: url(../assets/images/icons8-document-header-30.png) no-repeat
+  background: url(/src/assets/images/icons8-document-header-30.png) no-repeat
     scroll 4px 1px;
   padding-left: 30px;
   height: 2rem;

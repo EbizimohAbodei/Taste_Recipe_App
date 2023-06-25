@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Card from "./Card";
+import Card from "../Card/Card";
 import Swal from "sweetalert2";
 import classes from "./recipes.module.css";
-import Loading from "./Loading";
-import useDebounce from "../useDebounce";
+import Loading from "../Loader/Loading";
+import useDebounce from "../Hooks/useDebounce";
 const axios = require("axios").default;
 
 const Recipes = () => {

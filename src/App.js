@@ -1,12 +1,12 @@
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
-import Recipes from "./components/Recipes";
-import AddRecipe from "./components/AddRecipe";
-import Contact from "./components/Contact";
+import Recipes from "./components/Recipes/Recipes";
+import AddRecipe from "./components/AddRecipe/AddRecipe";
+import Contact from "./components/Contact/Contact";
 import Home from "./components/Home";
-import About from "./components/About";
-import SingleRecipe from "./components/SingleRecipe";
+import About from "./components/About/About";
+import SingleRecipe from "./components/SingleRecipe/SingleRecipe";
 import { useParams } from "react-router-dom";
 
 const RouterWrapper = (props) => {
