@@ -18,9 +18,11 @@ const Card = (props) => {
       ></img>
       <div className={classes.cardText}>
         <h3>{props.recipeName}</h3>
-        <p>{props.instructions}</p>
+        <p>
+          {props.instructions.replace(/(<([^>]+)>)/gi, "").substring(0, 400)}
+        </p>
       </div>
-      <Link to={props.recipeName} className={classes.seeMoreLink}>
+      <Link to={`/recipes/${props.id}`} className={classes.seeMoreLink}>
         See more
       </Link>
       <button

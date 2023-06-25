@@ -3,6 +3,7 @@ import Card from "./Card";
 import Swal from "sweetalert2";
 import classes from "./recipes.module.css";
 import Loading from "./Loading";
+import useDebounce from "../useDebounce";
 const axios = require("axios").default;
 
 const Recipes = () => {
@@ -10,34 +11,41 @@ const Recipes = () => {
   const [countryData, setCountryData] = useState([]);
   const [searchData, setSearchData] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const debouncedValue = useDebounce(searchData, 500);
+  const getApiData = async () => {
+    const recipeCall = await axios("http://localhost:3001/recipes");
+    const countryCall = await axios("https://restcountries.com/v2/all");
+    // Setting response data to useState variables
+    setRecipeData(recipeCall.data);
+    setCountryData(countryCall.data);
+    setLoading(!loading);
+  };
   // Api calls using axios and asynchronous functions
   useEffect(() => {
-    const getApiData = async () => {
-      const recipeCall = await axios("http://localhost:3001/recipes");
-      const countryCall = await axios("https://restcountries.com/v2/all");
-
-      // Setting response data to useState variables
-      setRecipeData(recipeCall.data);
-      setCountryData(countryCall.data);
-      setLoading(!loading);
-    };
     getApiData();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Does the search by filtering data from local storage based on user input onChange
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     setSearchData(e.target.value.toLocaleLowerCase());
+  };
+
+  useEffect(() => {
+    if (!debouncedValue) {
+      getApiData();
+    }
     // eslint-disable-next-line
     const filteredArr = recipeData?.filter((recipe) => {
-      if (recipe.recipename?.toLocaleLowerCase().includes(searchData)) {
+      if (recipe.recipename?.toLocaleLowerCase().includes(debouncedValue)) {
         return recipe;
       }
     });
-    setRecipeData(filteredArr);
-  };
 
+    setRecipeData(filteredArr);
+
+    // eslint-disable-next-line
+  }, [debouncedValue]);
   // Triggers the delete action from database and re-renders page in line 42
   const deleteCard = (id) => {
     Swal.fire({

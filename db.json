@@ -197,6 +197,32 @@
         }
       ],
       "id": 7
+    },
+    {
+      "recipename": "Dead Beans",
+      "author": "Deril Falon",
+      "recipeImageUrl": "https://source.unsplash.com/300x300/?beans",
+      "countrycode": "ROU",
+      "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. ",
+      "ingredients": [
+        {
+          "name": "Bean",
+          "quantity": "1kg"
+        },
+        {
+          "name": "Palm Oil",
+          "quantity": "5 Tea Spoon"
+        },
+        {
+          "name": "Cheese",
+          "quantity": "One slice"
+        },
+        {
+          "name": "Pepper",
+          "quantity": "Half Tea Spoon"
+        }
+      ],
+      "id": 8
     }
   ]
 }
