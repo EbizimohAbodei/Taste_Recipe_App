@@ -33,3 +33,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 - https://recipe-application-ebizimoh.herokuapp.com/
 
+### Live Link
+
+- https://taste-recipe-ibe36n7au-ebizimohabodei.vercel.app/
+
